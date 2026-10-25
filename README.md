@@ -10,10 +10,9 @@ Everything runs **locally on your own PC**. No cloud, no API keys, no accounts.
 
 > Built for the Hacktoberfest Open-Source AI Challenge, Week 3: *Slow and Steady*.
 
-<!-- Add a screenshot or GIF here -->
-<!-- ![Moss](docs/moss.gif) -->
+**Character:** the 3D model is "Zainab-Chan" by mimenn_ ([VRoid Hub](https://hub.vroid.com/en/characters/542563936448829639/models/1717281170322434139)), used with credit. It is not my work and it is not included in this repo, see [Add a character](#add-a-character) and [Credits](#credits).
 
-**Demo video:** [ADD LINK]
+**Demo:** the video is in my DEV submission post for the challenge.
 
 ---
 
@@ -116,8 +115,8 @@ window titles or contents. Chores that change things ask first or only run in sa
 
 ### Steps
 ```bat
-git clone [YOUR_REPO_URL]
-cd moss
+git clone https://github.com/YuvrajSHAD/Desktop-Companion
+cd Desktop-Companion
 
 :: 1. Python environment
 python -m venv venv
@@ -142,9 +141,17 @@ The first run downloads Whisper and Kokoro models, so be patient.
 ### Add a character
 Moss needs a `.vrm` file in `models/` (VRM 0.x or 1.0). If several are present, `character.vrm` wins.
 
-- The repo ships a placeholder sample (`VRM1_Constraint_Twist_Sample` by pixiv, VRM License 1.0).
-- To make your own: **VRoid Studio** (free) exports VRM. You can also find models on VRoid Hub or Booth.
+**The character is not included in this repo.** The one in my demo is **"Zainab-Chan" by mimenn_** (VRoid Hub, VRM 1.0).
+Its license requires credit and does not allow redistribution, so please download it yourself:
+
+1. Open https://hub.vroid.com/en/characters/542563936448829639/models/1717281170322434139
+2. Download the VRM file (VRoid Hub may ask you to log in and accept the usage terms).
+3. Save it as `models\character.vrm`.
+
+You can also use any other character:
+- Make your own with **VRoid Studio** (free, exports VRM), or find models on VRoid Hub or Booth.
 - **Always check a model's own license** (commercial use, credit, redistribution) before using or sharing it.
+- `models/*.vrm` is in `.gitignore` so a downloaded model never ends up in a commit by accident.
 
 ### Run
 ```bat
@@ -245,8 +252,12 @@ Please keep dangerous chores behind a "say yes" step.
 - [Whisper](https://github.com/openai/whisper), [Kokoro](https://github.com/hexgrad/kokoro), [Gemma](https://ai.google.dev/gemma), [Ollama](https://ollama.com)
 - [three.js](https://threejs.org), [three-vrm](https://github.com/pixiv/three-vrm), [Electron](https://www.electronjs.org)
 - Idea inspired by [Mate-Engine](https://github.com/shinyflvre/Mate-Engine)
-- Character: [NAME AND CREATOR OF YOUR VRM, plus where you got it]
+- **Character model:** "Zainab-Chan" by **mimenn_**, from [VRoid Hub](https://hub.vroid.com/en/characters/542563936448829639/models/1717281170322434139) (VRM 1.0). Not my work. As shown on its page:
+  avatar use, corporate use and personal commercial use are allowed and credit is required; redistribution, modification
+  and redistribution of modified versions are not allowed; no sexual, religious/political or hateful use. That is why the
+  model file is not in this repo. Moss only poses and renders it at run time and never edits or ships the file.
+  Check the model page for its current terms.
 
 ## License
 
-[CHOOSE A LICENSE, e.g. MIT, and add a LICENSE file]. Models and characters keep their own licenses.
+The code in this repo is released under the [MIT License](LICENSE). Models and characters keep their own licenses (see Credits).
