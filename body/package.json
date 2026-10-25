@@ -1,0 +1,21 @@
+{
+  "name": "sloth-pet-body",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Transparent always-on-top VRM desktop companion body for Moss",
+  "main": "main.js",
+  "scripts": {
+    "build": "node build.js",
+    "start": "node build.js && electron .",
+    "postinstall": "node build.js"
+  },
+  "dependencies": {
+    "@pixiv/three-vrm": "3.5.5",
+    "three": "0.186.1",
+    "ws": "8.21.3"
+  },
+  "devDependencies": {
+    "electron": "44.9.3",
+    "esbuild": "0.28.2"
+  }
+}

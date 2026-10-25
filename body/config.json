@@ -1,0 +1,9 @@
+{
+  "ws": "ws://127.0.0.1:8765",
+  "window": { "w": 440, "h": 780, "row": 600 },
+  "ppm": 230,
+  "heightM": 1.6,
+  "headroom": 380,
+  "sleepAfterSec": 240,
+  "walkSpeed": 55
+}

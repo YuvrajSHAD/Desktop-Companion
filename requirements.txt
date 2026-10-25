@@ -1,0 +1,25 @@
+# ---- PyTorch: CUDA 13.0 build (NOT cpu) --------------------------------------
+# --index-url points pip at the official CUDA wheel index; PyPI is only a fallback
+# for everything else. The pinned "+cu130" local version can only match the CUDA
+# wheel, so pip can never silently pick the CPU build from PyPI.
+--index-url https://download.pytorch.org/whl/cu130
+--extra-index-url https://pypi.org/simple
+torch==2.14.1+cu130
+
+# ---- Ears: Whisper large-v3-turbo via transformers (runs on the same CUDA torch) --
+transformers>=4.56
+numpy
+sounddevice
+PyAudioWPatch; sys_platform == "win32"   # system-audio loopback, so Moss can dance to your music
+webrtcvad-wheels
+
+# ---- Mouth: Kokoro-82M TTS ---------------------------------------------------
+kokoro>=0.9.4
+misaki[en]>=0.9.4
+soundfile
+
+# ---- Link to the desktop body (localhost WebSocket) --------------------------
+websockets>=14
+
+# ---- Brain: talks to the local Ollama server ---------------------------------
+ollama>=0.5.1
